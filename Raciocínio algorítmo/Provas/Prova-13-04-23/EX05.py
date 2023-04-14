@@ -1,0 +1,5 @@
+a = int(input('Insira o primeiro termo da PG: '))
+r = int(input('Insira a razão da PG: '))
+n = int(input('Insira o número sequencial do elemento da PG: '))
+resp = a * (r**(n-1))
+print('O enésimo termo é {}'.format(resp))
