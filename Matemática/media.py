@@ -1,6 +1,8 @@
-pond = [ ]
-dic = { }
+tot = [ ]
+provas = []
 nt = 0
+pesao = 0
+cima = 0
 
 print('\033[1;97m{}'.format('—')*40)
 print('\033[1;97m{:^40}\033[m'.format('CALCULADORA DE MÉDIA'))
@@ -24,7 +26,6 @@ if resp == 1:
     m = nt / qtd
 
 
-
 if resp == 2:
     print('\033[1;97m{}'.format('—')*40)
     print('\033[1;97m{:^40}\033[m'.format('Média ponderada'))
@@ -33,31 +34,23 @@ if resp == 2:
 
     qtd = int(input('Insira a quantidade de notas: '))
     for c in range(qtd):
-        print('—'*8)
-        peso = float(input('PROVA {}\nPeso: '.format(c+1)))
+        print()
+        print('—'*12)
+        print('   PROVA {}'.format(c+1))
+        print('—'*12)
+        peso = float(input('Peso: '))
         nota = float(input('Nota: '))
-        dic[peso] = nota
-        pond.append(dic)
-        print(pond) #TESTE PRA VER SE TA FUNCIONADNO
+        print('—'*12)
+        pesao += peso
+        provas.append(peso)
+        provas.append(nota)
+        tot.append(provas)
+        provas = [ ]
 
-    for v, i in enumerate(pond):
-        print('i:', i)
-        print('v:', v)
-        print(i[v])
-        print(i[v+1])
-        print()
-        print()
+    for c in range(qtd):
+        cima += (tot[c][0] * tot[c][1])
 
-
+    m = cima / pesao
         
-
-#    m = nt / qtd
-
-
-
-
-
-
-
 
 print('\nA sua média foi {:.1f}'.format(m))
