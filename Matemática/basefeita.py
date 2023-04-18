@@ -54,3 +54,5 @@ if resp == 2:
         
 
 print('\nA sua média foi {:.1f}'.format(m))
+
+#ate aqui foi
