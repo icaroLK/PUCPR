@@ -48,4 +48,8 @@ if resp == 2:
         cima += (tot[c][0] * tot[c][1])
 
     m = cima / pesao
+        
+
 print('\nA sua média foi {:.1f}'.format(m))
+
+#ate aqui foi
