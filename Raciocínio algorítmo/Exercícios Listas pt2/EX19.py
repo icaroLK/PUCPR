@@ -1,25 +1,24 @@
-W = []
-U = []
-L = []
-N = []
-M = []
-O = []
-tot = [W,U,L,N,M,O]
+Windows = []
+Unix = []
+Linux = []
+Netware = []
+Mac = []
+Outro = []
+tot = [Windows, Unix, Linux, Netware, Mac, Outro]
 porcentagens = []
-
+servers = ['Windows Server', 'Unix', 'Linux', 'Netware', 'Mac OS', 'Outro']
 resp = ''
 votos = 0
 
+print('Qual é o melhor Sistema Operacional para uso em servidores?')
 
-print('''Qual a melhor Sistema Operacional para uso em servidores?
+for c in range(1, 6+1):
+    if c == 6:
+        print('0 - Sair')
+    else:
+        print(f'{c} - {servers[c-1]}')
 
-1 - Windows Server
-2 - Unix
-3 - Linux
-4 - Netware
-5 - MAC OS
-6 - Outro
-0 - Sair''')
+
 while resp != '0':
     while True:
         resp = input('R: ')
@@ -35,8 +34,6 @@ while resp != '0':
         except ValueError:
             print('Digite um número')
 
-
-
     for c in range(1, 6+1):
         if num == c:
             tot[c-1].append(1)
@@ -45,12 +42,14 @@ for i, per in enumerate(tot):
     porce = int('{:.0f}'.format(len(per)/votos*100))
     porcentagens.append(porce)
 
-print(tot)
-print(porcentagens)
 
-print('_'*35)
-print('{:<19}{:>10}{:>6}'.format('Sistema operacional', 'Votos', '%'))
-print('⁻'*35)
 
-for c in tot:
-    print('{:<19}{:>10}{:>6}'.format('oi',sum(tot),'po' ))
+print('_'*42)
+print('   {:<19}{:>10}{:>7}'.format('Sistema operacional', 'Votos', '%'))
+print('⁻'*42)
+
+
+for i,c in enumerate(tot):
+    print('   {:<19}{:>10}{:>6}%'.format(servers[i], sum(tot[i]), porcentagens[i]))
+print('⁻'*42)
+print()
