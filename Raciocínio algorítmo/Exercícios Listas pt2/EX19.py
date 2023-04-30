@@ -51,5 +51,5 @@ print('⁻'*42)
 
 for i,c in enumerate(tot):
     print('   {:<19}{:>10}{:>6}%'.format(servers[i], sum(tot[i]), porcentagens[i]))
-print('⁻'*42)
-print()
+print('_'*42)
+print('   {:<19}{:>10}{:>7}'.format('Total', votos, '100%'))
