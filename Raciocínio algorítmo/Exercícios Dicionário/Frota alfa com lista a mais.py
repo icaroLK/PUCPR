@@ -1,3 +1,5 @@
+#usando mais uma lista
+
 def tit(msg, x=40):
     print('_' * x)
     print('\033[97m{:^40}\033[m'.format(msg))
@@ -49,6 +51,7 @@ for i, c in enumerate(unidades):
 print('_' * 40)
 
 conferir_num('Valor a ser convertido: ')
+a = ['', '\033[31mpc\033[m', '\033[32mal\033[m', '\033[33mae\033[m', '\033[34mml\033[m', '\033[35msl\033[m'] #não precisaria desse lista se eu soubesse pegar o nome de um chave em um dicionário
 
 conferir_opc('Converter de: ', 1,5)
 de = opc
@@ -56,8 +59,6 @@ de = opc
 conferir_opc('Converter para: ',1,5)
 para = opc
 
-final = valor * list(anos_luz.values())[para-1] / list(anos_luz.values())[de-1]
-
-
-print('\nConversão:\n{} {} ≅ {:.4f} {}\n\n'.format(valor,list(anos_luz.keys())[de-1],final,list(anos_luz.keys())[para-1]))
+final = valor * anos_luz[a[para]] / anos_luz[a[de]]
+print('\nConversão:\n{} {} = {:.4f} {}\n\n'.format(valor,a[de],final,a[para]))
 
