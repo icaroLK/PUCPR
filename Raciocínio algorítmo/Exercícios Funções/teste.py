@@ -1,35 +1,14 @@
-from random import randint, choice
-
-num = [1,2,3,4,5,6,7,8,9]
-mat = [0] * 9 
-
-penes = 1
-
-while True:
-    num = [1,2,3,4,5,6,7,8,9]
-    for c in range(9):
-        mat[c] = choice(num)
-        num.remove(mat[c])
-
-#    print(mat)
-
-    if mat[0] + mat[1] + mat[2] == mat[0] + mat[3] + mat[6] == mat[0] + mat[4] + mat[8]:
-     #   print(mat)
-        break
+def data(date):
+    l = []
+    l.append(date[:2])
+    l.append(date[2:4])
+    l.append(date[4:])
+    mes = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+         'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+    for c in range(len(mes)):
+        if c == int(l[1]):
+            return f'DATA EM EXTENSO: {l[0]} de {mes[c]} de {l[2]}'
 
 
-
-
-
-
-
-
-    penes += 1
-print('\nForam necessários {} tentativas\n'.format(penes))
-
-for c in range(9):
-    print(mat[c], end=' ')
-    if c == 2 or c == 5:
-        print()
-
-print('\n')
+date = input('Digite uma data [dd/mm/aaaa]: ').strip().replace('/', '')
+print(data(date))
