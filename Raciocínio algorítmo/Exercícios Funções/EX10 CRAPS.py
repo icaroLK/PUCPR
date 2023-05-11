@@ -1,4 +1,5 @@
 from random import randint
+from time import sleep
 
 print('_' * 40)
 print('\033[97m{:^40}\033[m'.format('CRAPS'))
@@ -32,7 +33,7 @@ while True:
             print('\033[32mGANHOU!\033[m\nVocê alcançou seus pontos')
             break
     
-    
+    sleep(1.5)
     
 
 
