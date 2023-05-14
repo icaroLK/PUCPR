@@ -24,6 +24,7 @@ if resp == 1:
         nota = float(input('Insira a nota da {}° prova: '.format(c+1)))
         nt += nota
     m = nt / qtd
+    print('\nA sua média foi {:.1f}'.format(m))
 
 
 if resp == 2:
@@ -51,26 +52,23 @@ if resp == 2:
         cima += (tot[c][0] * tot[c][1])
 
     m = cima / pesao
+    print('\nA sua média foi {:.1f}'.format(m))
         
 
 if resp == 3:
     print('\033[1;97m{}'.format('—')*40)
     print('\033[1;97m{:^40}\033[m'.format('Nota faltante'))
     print('\033[1;97m{}\033[m'.format('—')*40)
+    mini = float(input('Insira a média necessária para passar: '))
     qtd = int(input('Insira a quantidade de notas: '))
 
     for c in range(qtd-1):
         nota = float(input('Insira a nota da {}° prova: '.format(c+1)))
         nt += nota
-    n = 
+    # n = nt / qtd
+    x = (mini * qtd) - nt
+    print('Você precisa tirar no mínimo {:.2f} na próxima prova para passar de ano'.format(x))
 
 
+print('\nobrigado, volte sempre :)')
 
-            
-
-
-
-
-print('\nA sua média foi {:.1f}'.format(m))
-
-#ate aqui foi
