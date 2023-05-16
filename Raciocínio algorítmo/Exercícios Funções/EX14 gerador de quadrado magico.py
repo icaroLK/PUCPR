@@ -28,7 +28,7 @@ while True:
     # esse jeito aqui eu achei q um quadrado mágico era a soma de (a + d + g == a + b + c == a + e + i) mas aparentemente tava errado ent esse novo código faz com que a soma de todos as linhas e todas as colunas sejam iguais (mas fica com MUITO mais tentativas)
 
 
-    if a + b + c == d + e + f == g + h + i == a + d + g == b + e + h == c + f + i == a + e + i:
+    if a + b + c == d + e + f == g + h + i == a + d + g == b + e + h == c + f + i == a + e + i == c + e + g:
         break
     qtd += 1
 print('\nForam necessários {} tentativas\n'.format(qtd))
