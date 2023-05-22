@@ -1,26 +1,27 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+# crescente = a > 1
+# decrescente = 0 > a > 1
+# inexstente a < 0
 
+#   f(x) = 4 ** x
+a = float(input("Insira o valor de 'a': "))
+def f(x, a):
+    y = a**(x)
+    return y
 
-# função:y = 2x + 1
-vetorX = np.arange(-10,10,0.1)
-#vetorY = [1,3,5,7,9,11]
+vx = np.arange(-10, 10, 0.1)
+vy = []
 
-for x in vetorX:
-    vetorY.append(x)
+for x in vx:
+    y = f(x,a)
+    vy.append(y)
 
+fig =  plt.figure(figsize=(7,7))
 
-
-
-
-
-
-
-
-
-# criar uma figura
-fig = plt.figure(figsize=(5,5))
+plt.plot(vx, vy, label = 'f(x) = a**x', color = 'g')
+plt.title(f'f(x) = {a}**x')
+plt.xlabel('Eixo x')
+plt.ylabel('Eixo y')
 plt.show()
-
-
