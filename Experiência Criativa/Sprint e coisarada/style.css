@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.img{
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.img img{
+    max-width: 50px;
+    padding: 5px 10px;
+}
+
+
+
+nav{
+    text-align: center;
+    background-color: rgb(201, 255, 201);
+    padding-top: 20px;
+}
+
+
+nav p {
+    font-size: 1.2em;
+    display: inline-block;
+    background-color: rgb(117, 203, 114);
+    padding: 8px;
+    border-radius: 10px 10px 0px 0px ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    &:hover{
+        background-color: rgb(100, 175, 100);
+    
+    }
+
+}
+
+nav a{
+    margin: 0px 4px;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.3em;
+
+}
+
+
+
+/* header{
+    height: 200px;
+    background: url("banner.jpg") no-repeat center left;
+    background-size: cover;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+} */
+
+.card{
+    height: 250px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.274);
+    background-image: linear-gradient(2.4rad, rgb(140, 233, 140), rgb(134, 230, 153));
+    margin: 30px auto;
+
+}
+
+h2, p{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+
+
+.oi{
+    margin: auto;
+    width: 350px;
+    height: 70px;
+    border-radius: 10px;
+    background-position: center center;
+    background: url(disney.png);
+    background-size: cover;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.141);
+}
+
+.oi2{
+    margin: auto;
+    width: 350px;
+    height: 70px;
+    border-radius: 10px;
+    background-position: center center;
+    background: url(cancum.jpg);
+    background-size: cover;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.141);
+}
+
+.oi3{
+    margin: auto;
+    width: 350px;
+    height: 70px;
+    border-radius: 10px;
+    background-position: center center;
+    background: url(cara.jpg);
+    background-size: cover;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.141);
+}
