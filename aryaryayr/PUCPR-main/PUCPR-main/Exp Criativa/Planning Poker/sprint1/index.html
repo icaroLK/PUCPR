@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário - Agência de Viagem</title>
+
+</head>
+<body>
+    <h1>Agência de Viagem</h1>
+    <form action="https://formsubmit.co/aryfarahs@gmail.com">
+        <br>
+        <div>
+            <label>Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu Nome" required class="text">
+        </div>
+        <br>
+        <div>
+            <label>Telefone:</label>
+            <input type="text" name="telefone" id="telefone" placeholder="XX XXXXX-XXXX" required class="text">
+        </div>
+        <br>
+        <div>
+            <label>Email:</label>
+            <input type="text" name="email" id="email" placeholder="user.exe@exemplo.com" required class="text">
+        </div>
+        <br>
+        <div>
+            <label>Cidade de Origem</label>
+            <input type="text" name="origem" id="origem" placeholder="Ex: Amapá" required class="text">
+            <label>Cidade de Destino</label>
+            <input type="text" name="destino" id="destino" placeholder="Ex: Umuarama" required class="text">
+        </div>
+            <br>
+            <div>
+                <label>Data de Ida:</label>
+                <input type="date" name="Ida" id="ida" placeholder="dd/mm/aaaa" required class="date">
+                <label>Data de Volta:</label>
+                <input type="date" name="volta" id="volta" placeholder="dd/mm/aaaa" required class="date">
+            </div>
+        </div>
+        <br>
+        <div>
+            <label>Número de viajantes:</label>
+            <input type="number" name="viajantes" id="viajantes" required class="number">
+        </div>
+        <br>
+        <div><input type="text" name="obs" id="obs" placeholder="Observações..."></div>
+        <br>
+        <div>
+            <input type="reset" value="Limpar">
+            <input type="text">
+        </div>
+        <br>
+        <div><button type="submit">Enviar</button></div>
+    </form>
+</body>
+</html>
