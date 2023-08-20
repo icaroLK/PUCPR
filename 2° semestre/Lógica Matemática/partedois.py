@@ -5,6 +5,9 @@
 #   (p -> (q -> r))
 #   ((p ^ q) -> r)
 #   ((p -> (q -> r )) -> (( p -> q) -> (p -> r)))
+
+#   ((p|→|(q|→|r|))→|((p|→|q|)→|(p|→|r|)))
+
 #   (p ^ q)
 #
 
@@ -17,13 +20,16 @@ def QtdLetras():
     return len(unicas)
 
 
-def separarExpressao():
+def separarExpressao(a=0):
     tab = []
     for caracter in expressao:
         tab.append(caracter)
         if caracter not in '()':
             tab.append('|')
-    return ''.join(tab)
+    if a == 0:
+        return ''.join(tab)
+    elif a == 1:
+        return tab
 
 
 
@@ -39,8 +45,8 @@ def posCarac(x):
         return lista
 
 
-def caracterPosicao(x):
-    for vez, carac in enumerate(separarExpressao()):
+def caracterPosicao(x, frase):
+    for vez, carac in enumerate(frase):
         if vez == x:
             return carac
 
@@ -79,9 +85,37 @@ def quantoEmQuanto(Y, passo):
 
 
 
+def implicacao(a, b):
+    if a == 'V' and b == 'V' or a == 'F' and b == 'V' or a == 'F' and b == 'F':
+        return 'V'
+    elif a == 'V' and b == 'F':
+        return 'F'
+
+def disjuncao(a, b):
+    if a == 'V' and b == 'V' or a == 'F' and b == 'V' or a == 'V' and b == 'F':
+        return 'V'
+    elif a == 'F' and b == 'F':
+        return 'F'
+    
+def conjuncao(a, b):
+    if a == 'V' and b == 'V':
+        return 'V'
+    elif a == 'F' and b == 'F' or a == 'F' and b == 'V' or a == 'V' and b == 'F':
+        return 'F'
+    
+def bicondicional(a, b):
+    if a == 'V' and b == 'V' or a == 'F' and b == 'F':
+        return 'V'
+    elif a == 'F' and b == 'V' or a == 'V' and b == 'F':
+        return 'F'
+    
 
 
-def verseeh(posletra, linha):
+
+
+
+
+def VouF(posletra, linha):
 
 
 
@@ -100,9 +134,9 @@ def verseeh(posletra, linha):
 
 
 
+#   ((p -> (q -> r )) -> (( p -> q) -> (p -> r)))
 
-
-def tudo():
+def linhaPorLinha():
     linhao = []
     for linha in range(1, QtdLinhas+1):
         linhalist = [" "] * len(separarExpressao())
@@ -112,18 +146,71 @@ def tudo():
             for vezcarac, carac in enumerate(separarExpressao()):
                 if carac == letra:
 
-                    linhalist[vezcarac] = verseeh(posletra, linha)
-                    linhalist[vezcarac-1] = '|'
+                    linhalist[vezcarac] = VouF(posletra, linha)
+                #    linhalist[vezcarac-1] = '|'
+                elif carac == '|' and carac not in ('(', ')'):
+                    linhalist[vezcarac] = '|'
+                elif carac == '(':
+                    linhalist[vezcarac] = '('
+                elif carac == ')':
+                    linhalist[vezcarac] = ')'
         
-        
-        linhao.append(''.join(linhalist))
-        
+        #  →   ↔   ∧   ∨   ¬
+
+        linhaarrumada = ''.join(linhalist)
+        for vezcarac, carac in enumerate(linhaarrumada):
+            jafoi = set()
+            for cu in range(1):
+                if vezcarac == confParent()[cu]:
+                    jafoi.add(confParent()[cu])
+
+                    if separarExpressao()[vezcarac+3] == '→':
+                        resp = implicacao(caracterPosicao(confParent()[cu]+1, linhaarrumada), caracterPosicao(confParent()[cu]+5, linhaarrumada))
+                    elif separarExpressao()[vezcarac+3] == '↔':
+                        resp = bicondicional(caracterPosicao(confParent()[cu]+1, linhaarrumada), caracterPosicao(confParent()[cu]+5, linhaarrumada))
+                    elif separarExpressao()[vezcarac+3] == '∧':
+                        resp = conjuncao(caracterPosicao(confParent()[cu]+1, linhaarrumada), caracterPosicao(confParent()[cu]+5, linhaarrumada))
+                    elif separarExpressao()[vezcarac+3] == '∨':
+                        resp = disjuncao(caracterPosicao(confParent()[cu]+1, linhaarrumada), caracterPosicao(confParent()[cu]+5, linhaarrumada))
+
+                    linhalist[vezcarac+3] = resp
+
+        6 7 8 10 11 12
+        menor = separarExpressao(1)
+        menor.pop()
+
+
+
+        linhao.append(''.join(linhalist))          ###TROCA AQUI PRA CONFERIR O BAGULHO
+    #    linhao.append(linhalist)                    ###TROCA AQUI PRA CONFERIR O BAGULHO
+  #  print(linhao)
     return '\n'.join(linhao)
 
 
+
+
+
+
             
-            
-        
+def confParent():
+    nicole = False
+    posi = []
+
+    for vez, carac in enumerate(separarExpressao()):
+        if carac == '(':
+            if nicole == True:
+                nicole = False
+                posi = []
+            else:
+                nicole = True
+                posi.append(vez)
+        if carac == ')' and nicole == True:
+            posi.append(vez)
+            break
+    return posi
+
+
+
 
         
 
@@ -167,11 +254,18 @@ print(f'Frase separada: {separarExpressao()}\n\n\n')
 # print('\n\n')
 
 
-print('\n\n\n')
+
 
 
 print(separarExpressao())
 #print(quantoEmQuanto('q', 2))
 
 
-print(tudo())
+print(linhaPorLinha())
+
+print('\n\n\n')
+
+#print(confParent((separarExpressao())))
+
+
+confParent()

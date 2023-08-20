@@ -9,7 +9,7 @@
 #         alternar = not alternar
 
 
-
+'''
 
 
 def verseeh(posletra, linha):
@@ -48,3 +48,40 @@ def cu(X, linha):
         return 'V'
     else:
         return 'F'
+    
+'''
+'''
+    def linhaPorLinha():
+    linhao = []
+    for linha in range(1, QtdLinhas+1):
+        linhalist = [" "] * len(separarExpressao())
+
+
+        for posletra, letra in enumerate(unicas):
+            for vezcarac, carac in enumerate(separarExpressao()):
+                if carac == letra:
+
+                    linhalist[vezcarac] = VouF(posletra, linha)
+                #    linhalist[vezcarac-1] = '|'
+                elif carac == '|' and carac not in ('(', ')'):
+                    linhalist[vezcarac] = '|'
+                elif carac == '(':
+                    linhalist[vezcarac] = '('
+                elif carac == ')':
+                    linhalist[vezcarac] = ')'
+        
+    #    linhao.append(''.join(linhalist))          ###TROCA AQUI PRA CONFERIR O BAGULHO
+        linhao.append(linhalist)                    ###TROCA AQUI PRA CONFERIR O BAGULHO
+    print(linhao)
+  #  return ''.join(linhao)
+'''
+
+
+def bicondicional(a, b):
+    if a == 'V' and b == 'V' or a == 'F' and b == 'F':
+        return 'V'
+    elif a == 'F' and b == 'V' or a == 'V' and b == 'F':
+        return 'F'
+    
+
+print(bicondicional('F','F'))
