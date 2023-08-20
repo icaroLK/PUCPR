@@ -174,10 +174,31 @@ def linhaPorLinha():
                         resp = disjuncao(caracterPosicao(confParent()[cu]+1, linhaarrumada), caracterPosicao(confParent()[cu]+5, linhaarrumada))
 
                     linhalist[vezcarac+3] = resp
-
-        6 7 8 10 11 12
-        menor = separarExpressao(1)
-        menor.pop()
+    #
+    #   vezcarac+0 = 6
+    #   vezcarac+1 = 7
+    #   vezcarac+2 = 8
+    #   vezcarac+3 = 9 ****
+    #   vezcarac+4 = 10
+    #   vezcarac+5 = 11
+    #   vezcarac+6 = 12
+    #   vezcarac+7 = 13
+    #   
+    #
+     #   6 7 8 10 11 12 13
+    #    print(linhalist)
+                    print(vezcarac)
+                    menor = separarExpressao(1)
+                    print(f"MENOR: {menor}")
+                    menor.pop(vezcarac+0)
+                    menor.pop(vezcarac+0)
+                    menor.pop(vezcarac+0)
+                    menor.pop(vezcarac+1)
+                    menor.pop(vezcarac+1)
+                    menor.pop(vezcarac+1)
+                    menor.pop(vezcarac+1)
+                    print(''.join(menor))
+                    print('\n')
 
 
 
