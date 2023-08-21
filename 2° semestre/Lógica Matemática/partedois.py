@@ -187,9 +187,9 @@ def linhaPorLinha():
     #
      #   6 7 8 10 11 12 13
     #    print(linhalist)
-                    print(vezcarac)
+      #              print(vezcarac)
                     menor = separarExpressao(1)
-                    print(f"MENOR: {menor}")
+      #              print(f"MENOR: {menor}")
                     menor.pop(vezcarac+0)
                     menor.pop(vezcarac+0)
                     menor.pop(vezcarac+0)
@@ -197,8 +197,8 @@ def linhaPorLinha():
                     menor.pop(vezcarac+1)
                     menor.pop(vezcarac+1)
                     menor.pop(vezcarac+1)
-                    print(''.join(menor))
-                    print('\n')
+     #               print(''.join(menor))
+     #               print('\n')
 
 
 
