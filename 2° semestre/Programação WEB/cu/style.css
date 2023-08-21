@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.informacoes {
+    text-align: center;
+    margin: 20px;
+}
+
+.tabuleiro{
+    margin: auto;
+    height: 800px;
+    width: 800px;
+    border: 1px dashed red;
+    display: flex;
+    flex-direction: column;
+}
+
+.linha{
+    display: flex;
+    justify-content: center;
+}
+
+
+.peca{
+    width: 200px;
+    height: 200px;
+    border: 3px solid white;
+    box-sizing: border-box;
+    background-color: #4AB4E6;
+}
+.p1{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p2{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p3{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p4{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p5{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p6{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p7{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p8{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p9{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p10{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p11{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p12{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p13{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p14{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p15{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p16{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p17{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p18{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p19{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p20{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p21{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p22{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p23{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p24{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p25{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p26{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p27{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p28{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p29{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p30{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p31{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p32{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p33{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p34{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p35{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p36{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p37{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p38{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p39{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
+.p40{
+    background-image: url(img/capa.png);
+    background-size: cover;
+}
