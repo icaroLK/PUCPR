@@ -5,6 +5,8 @@ var pode;
 var count = 0;
 var vidamax = 5;
 
+
+
 function aleat(min, max){
 
     var aleat = Math.floor(Math.random() * (max - min + 1)) + min;
