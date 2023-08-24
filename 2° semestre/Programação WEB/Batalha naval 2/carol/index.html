@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Batlha naval dois</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <script language="JavaScript">
+                for(i=0; i<8; i++) {
+                    document.write("<tr>")
+                    for(j=0; j<12; j++) {
+                        document.write(`<td width=80px onclick='shipOnClick(${i}, ${j})'><img id='ship${i}${j}' width=80px src='images/back.jpg'></td>`)
+                    }
+                    document.write("</tr>")
+                }
+            </script>
+            <td colspan="9" style="text-align: center"><div id="divScoreboard">Pontos: 0 - Vidas: 10</div></td>
+        </tr>
+    </table>
+
+
+
+</body>
+</html>

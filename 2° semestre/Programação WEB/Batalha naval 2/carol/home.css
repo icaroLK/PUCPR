@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+
+
+.menu {
+    text-align: center;
+    margin-top: 40vh;
+}
+
+
+.op {
+    
+}
+
+
+
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    border: 1px solid #007BFF;
+    cursor: pointer;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+}
