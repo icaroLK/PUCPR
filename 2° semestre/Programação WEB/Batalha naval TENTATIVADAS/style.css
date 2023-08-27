@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: 1px dashed red; */
+}
+
+
+
+h1{
+    text-align: center;
+    margin: 20px 0px;
+}
+
+
+
+.infos{
+    text-align: center;
+    margin: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.tabuleiro{
+    margin: auto;
+    height: 800px;
+    width: 800px;
+    border: 1px dashed red;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.linha{
+    display: flex;
+    justify-content: center;
+}
+
+
+.peça{
+    width: 200px;
+    height: 200px;
+    border: 3px solid white;
+    box-sizing: border-box;
+    background-color: #4AB4E6;
+    
+}
+
+.p1{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p2{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p3{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p4{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p5{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p6{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p7{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p8{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p9{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p10{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p11{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p12{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p13{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p14{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p15{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
+.p16{
+    background-image: url(images/mapa.jpg);
+    background-size: cover;
+}
