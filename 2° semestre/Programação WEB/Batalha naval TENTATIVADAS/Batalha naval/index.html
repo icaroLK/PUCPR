@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha Naval</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="newgame()">
+
+<header>
+        <h1>Batalha naval</h1>
+</header>
+
+    <main class="tabuleiro">
+        <div class="linha linha1"> 
+            <div class="peça p1" id="1" onclick="clicar(this.id)"></div>
+            <div class="peça p2" id="2" onclick="clicar(this.id)"></div>
+            <div class="peça p3" id="3" onclick="clicar(this.id)"></div>
+            <div class="peça p4" id="4" onclick="clicar(this.id)"></div>
+        </div>
+
+        <div class="linha linha2"> 
+            <div class="peça p5" id="5" onclick="clicar(this.id)"></div>
+            <div class="peça p6" id="6" onclick="clicar(this.id)"></div>
+            <div class="peça p7" id="7" onclick="clicar(this.id)"></div>
+            <div class="peça p8" id="8" onclick="clicar(this.id)"></div>
+        </div>
+
+        <div class="linha linha3"> 
+            <div class="peça p9" id="9" onclick="clicar(this.id)"></div>
+            <div class="peça p10" id="10" onclick="clicar(this.id)"></div>
+            <div class="peça p11" id="11" onclick="clicar(this.id)"></div>
+            <div class="peça p12" id="12" onclick="clicar(this.id)"></div>
+        </div>
+
+        <div class="linha linha4"> 
+            <div class="peça p13" id="13" onclick="clicar(this.id)"></div>
+            <div class="peça p14" id="14" onclick="clicar(this.id)"></div>
+            <div class="peça p15" id="15" onclick="clicar(this.id)"></div>
+            <div class="peça p16" id="16" onclick="clicar(this.id)"></div>
+        </div>
+    </main>
+
+    <div class="infos">
+        <p>Pontos: <span id="pontos"></span></p>
+        <p>Vidas: <span id="vidas">5</span></p>
+    </div>
+
+
+
+
+    <script src="tab.js"></script>
+</body>
+</html>
