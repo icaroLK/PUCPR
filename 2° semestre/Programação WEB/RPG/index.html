@@ -5,34 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPG</title>
     <link rel="stylesheet" href="style.css">
-    <script src="javas.js"></script>
+    
 </head>
 <body>
     <!-- <h1>RPGzada</h1> -->
 
-    
-    <div class="mapa">
 
-    </div>
-    
 
-    
-    <div class="controls">
-        <img src="images/seta2.png" class="up" id="up" onclick="joystick(this.id)">
-        
-        <div class="meio">
-            <img src="images/seta2.png" class="left" id="left" onclick="joystick(this.id)">
-            <img src="images/seta2.png" class="right" id="right" onclick="joystick(this.id)">
+    <main>
+        <div class="map">
         </div>
-        
-        <img src="images/seta2.png" class="down" id="down" onclick="joystick(this.id)">
+        <div class="textarea">
+            <p class="cu"> 
 
-        <!-- <div class="bola">
-    
-        </div> -->
-        
+                RPGadas
+            </p>
+
+
+        </div>
+    </main>
+
+    <br>
+
+    <div class="joystick">
+
+        <div class="up" id="up" onclick="joystick(this.id)"> <img src="images/arrow.png"></div>
+
+        <div class="meio">
+            <div class="left" id="left" onclick="joystick(this.id)"><img src="images/arrow.png"></div>
+            <div class="right" id="right" onclick="joystick(this.id)"><img src="images/arrow.png"></div>
+        </div>
+
+        <div class="down" id="down" onclick="joystick(this.id)"><img src="images/arrow.png"></div>
+
+
+        <div class="bola" id="bola" onclick="joystick(this.id)"></div>
+
+
     </div>
-    
     
 
 
@@ -40,4 +50,5 @@
 
 
 </body>
+<script src="javas.js"></script>
 </html>
