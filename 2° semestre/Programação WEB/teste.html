@@ -93,8 +93,11 @@
         border-right: 25px solid transparent;
         border-bottom: 30px solid #000000; */
         &:hover{
-            /* background-image: linear-gradient(to top, black 75%, rgb(90, 90, 90)); */
+            /* background-image: linear-gradient(to top, black, rgb(22, 22, 22)); */
             box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.315);
+            border-top:5px solid #194fb4; 
+            border-left: 5px solid #194fb4;
+            border-right: 5px solid #194fb4;
         }
 
     }    
@@ -111,6 +114,9 @@
        &:hover{
             /* background-image: linear-gradient(to top, black 75%, rgb(90, 90, 90)); */
             box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.315);
+            border-bottom:5px solid #194fb4; 
+            border-left: 5px solid #194fb4;
+            border-right: 5px solid #194fb4;
         }
        
     }
@@ -131,6 +137,9 @@
        &:hover{
             /* background-image: linear-gradient(to top, black 75%, rgb(90, 90, 90)); */
             box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.315);
+            border-top:5px solid #194fb4; 
+            border-left: 5px solid #194fb4;
+            border-bottom: 5px solid #194fb4;
         }
     
     }
@@ -143,6 +152,9 @@
        &:hover{
             /* background-image: linear-gradient(to top, black 75%, rgb(90, 90, 90)); */
             box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, 0.315);
+            border-top:5px solid #194fb4; 
+            border-bottom: 5px solid #194fb4;
+            border-right: 5px solid #194fb4;
         }
         
     }
@@ -161,6 +173,10 @@
     &:hover{
         cursor: pointer;
         box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.411);
+        
+        border: 3px solid #194fb4; 
+        /* height: 76px;
+        width: 76px; */
     }
     
     
@@ -206,20 +222,41 @@ window.alert("voce apertou   " + opa)
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "ArrowUp") {
-        window.alert("cima")
+        up.style.boxShadow = "0px 0px 9px 3px rgba(0, 0, 0, 0.315)";
+        // window.alert("cima")
 
     } else if (event.key === "ArrowDown") {
-        window.alert("baixo")
+        down.style.boxShadow = "0px 0px 9px 3px rgba(0, 0, 0, 0.315)";
+        // window.alert("baixo")
 
     } else if (event.key === "ArrowLeft") {
-        window.alert("esquerda")
+        left.style.boxShadow = "0px 0px 9px 3px rgba(0, 0, 0, 0.315)";
+        // window.alert("esquerda")
 
     } else if (event.key === "ArrowRight") {
-        window.alert("direita")
+        right.style.boxShadow = "0px 0px 9px 3px rgba(0, 0, 0, 0.315)";
+        // window.alert("direita")
     }
 });
 
+document.addEventListener("keyup", function(event) {
+    if (event.key === "ArrowUp") {
+        up.style.boxShadow = "none";
+        // window.alert("cima")
 
+    } else if (event.key === "ArrowDown") {
+        down.style.boxShadow = "none";
+        // window.alert("baixo")
+
+    } else if (event.key === "ArrowLeft") {
+        left.style.boxShadow = "none";
+        // window.alert("esquerda")
+
+    } else if (event.key === "ArrowRight") {
+        right.style.boxShadow = "none";
+        // window.alert("direita")
+    }
+});
 
 
 
