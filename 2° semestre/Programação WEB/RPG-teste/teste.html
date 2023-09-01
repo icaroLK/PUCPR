@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG</title>
+    <link rel="stylesheet" href="teste.css">
+    
+</head>
+<body>
+    <!-- <h1>RPGzada</h1> -->
+
+
+
+    <main>
+        <div class="map">
+        </div>
+        <div class="textarea">
+            <p class="cu"> 
+
+                RPGadas
+            </p>
+
+
+        </div>
+
+        <div class="iniciar" onclick="iniciarJogo()">
+
+        </div>
+
+        <!-- <script>
+
+function iniciarJogo(){
+
+    const iniciar = document.querySelector('.iniciar');
+    const textarea = document.querySelector('.textarea');
+    const joystick = document.querySelector('.joystick');
+
+
+    textarea.style.visibility = "visible";
+    joystick.style.visibility = "visible";
+    iniciar.style.visibility = "hidden";
+
+
+}
+
+        </script> -->
+
+
+    </main>
+
+    <br>
+
+    <div class="joystick">
+
+        <div class="up" id="up" onclick="joystick(this.id)"> <img src="images/arrow.png"></div>
+
+        <div class="meio">
+            <div class="left" id="left" onclick="joystick(this.id)"><img src="images/arrow.png"></div>
+            <div class="right" id="right" onclick="joystick(this.id)"><img src="images/arrow.png"></div>
+        </div>
+
+        <div class="down" id="down" onclick="joystick(this.id)"><img src="images/arrow.png"></div>
+
+
+        <div class="bola" id="bola" onclick="joystick(this.id)"></div>
+
+
+    </div>
+    
+
+
+
+
+
+    <script src="teste.js"></script>
+</body>
+</html>
