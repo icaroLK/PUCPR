@@ -19,17 +19,25 @@ const bola = document.getElementById('bola');
 function iniciarJogo(){
 
     const iniciar = document.querySelector('.iniciar');
+    const textoini = document.querySelector('.textoini');
+
     const textarea = document.querySelector('.textarea');
     const joystick = document.querySelector('.joystick');
+    const map = document.querySelector('.map');
+    const body = document.querySelector('body');
 
 
-    joystick.style.visibility = "visible";
-    iniciar.style.visibility = "hidden";
+    joystick.style.opacity = "1";
+    textarea.style.opacity = "1";
+    textoini.classList.add("fadeOut");
+    iniciar.classList.add("fadeOut");
     
-    
-    
+    map.style.height = '40vh';
+    map.style.width = '80vh';
+    map.style.transition = 'ease-in-out 6s';
 
-
+    // body.style.backgroundImage = 'linear-gradient(45deg, #111855, #25451b)';
+    
 
 }
 
