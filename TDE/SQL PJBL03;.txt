@@ -1,0 +1,287 @@
+CREATE DATABASE PJBL03;
+USE PJBL03;
+
+CREATE TABLE Aluno (
+  ID_Aluno INT PRIMARY KEY,
+  Nome VARCHAR(200),
+  DataNascimento DATE
+);
+
+CREATE TABLE Professor (
+  ID_Professor INT PRIMARY KEY,
+  Nome VARCHAR(200)
+);
+
+CREATE TABLE Curso (
+  ID_Curso INT PRIMARY KEY,
+  Nome VARCHAR(200),
+  Periodo INT
+);
+
+CREATE TABLE Materia (
+  ID_Materia INT PRIMARY KEY,
+  Nome VARCHAR(200),
+  Horas INT
+);
+
+CREATE TABLE Empresa (
+  ID_Empresa INT PRIMARY KEY,
+  Nome VARCHAR(200),
+  CNPJ VARCHAR(18)
+);
+
+CREATE TABLE Funcionario (
+  ID_Funcionario INT PRIMARY KEY,
+  Nome VARCHAR(200)
+);
+
+CREATE TABLE Matricula_Aluno_Professor_Curso (
+  fk_Aluno_ID INT,
+  fk_Professor_ID INT,
+  fk_Curso_ID INT,
+  PRIMARY KEY (fk_Aluno_ID, fk_Professor_ID, fk_Curso_ID),
+  FOREIGN KEY (fk_Aluno_ID) REFERENCES Aluno(ID_Aluno),
+  FOREIGN KEY (fk_Professor_ID) REFERENCES Professor(ID_Professor),
+  FOREIGN KEY (fk_Curso_ID) REFERENCES Curso(ID_Curso)
+);
+
+CREATE TABLE Tem (
+  fk_Curso_ID INT,
+  fk_Materia_ID INT,
+  PRIMARY KEY (fk_Curso_ID, fk_Materia_ID),
+  FOREIGN KEY (fk_Curso_ID) REFERENCES Curso(ID_Curso),
+  FOREIGN KEY (fk_Materia_ID) REFERENCES Materia(ID_Materia)
+);
+
+
+INSERT INTO Aluno (ID_Aluno, Nome, DataNascimento) VALUES
+(1, 'Alice Silva', '2003-02-10'),
+(2, 'Bruno Gomes', '2003-04-15'),
+(3, 'Carla Souza', '2003-06-20'),
+(4, 'Daniel Rocha', '2003-08-25'),
+(5, 'Eduardo Costa', '2003-10-30'),
+(6, 'Fernanda Dias', '2003-12-05'),
+(7, 'Gabriel Martins', '2004-01-10'),
+(8, 'Helena Santos', '2004-03-15'),
+(9, 'Ígor Oliveira', '2004-05-20'),
+(10, 'Joana Almeida', '2004-07-25'),
+(11, 'Kaique Barros', '2004-09-30'),
+(12, 'Larissa Teixeira', '2004-11-05'),
+(13, 'Mário Andrade', '2004-12-10'),
+(14, 'Natália Lima', '2005-01-15'),
+(15, 'Otávio Pereira', '2005-03-20');
+
+INSERT INTO Professor (ID_Professor, Nome) VALUES
+(1, 'Prof. Ana Beatriz'),
+(2, 'Prof. Bruno César'),
+(3, 'Prof. Carla Dantas'),
+(4, 'Prof. Daniel Esteves'),
+(5, 'Prof. Elisa Figueiredo'),
+(6, 'Prof. Fernando Gomes'),
+(7, 'Prof. Gabriela Horta'),
+(8, 'Prof. Henrique Ito'),
+(9, 'Prof. Isabela Jardim'),
+(10, 'Prof. João Kleber'),
+(11, 'Prof. Larissa Moraes'),
+(12, 'Prof. Márcio Nogueira'),
+(13, 'Prof. Nívea Oliveira'),
+(14, 'Prof. Oscar Pires'),
+(15, 'Prof. Patrícia Queiroz');
+
+INSERT INTO Empresa (ID_Empresa, Nome, CNPJ) VALUES
+(1, 'Empresa A', '12.345.678/0001-91'),
+(2, 'Empresa B', '23.456.789/0001-82'),
+(3, 'Empresa C', '34.567.890/0001-73'),
+(4, 'Empresa D', '45.678.901/0001-64'),
+(5, 'Empresa E', '56.789.012/0001-55'),
+(6, 'Empresa F', '67.890.123/0001-46'),
+(7, 'Empresa G', '78.901.234/0001-37'),
+(8, 'Empresa H', '89.012.345/0001-28'),
+(9, 'Empresa I', '90.123.456/0001-19'),
+(10, 'Empresa J', '01.234.567/0001-01'),
+(11, 'Empresa K', '11.235.678/0002-92'),
+(12, 'Empresa L', '21.346.789/0002-83'),
+(13, 'Empresa M', '31.457.890/0002-74'),
+(14, 'Empresa N', '41.568.901/0002-65'),
+(15, 'Empresa O', '51.679.012/0002-56');
+
+INSERT INTO Funcionario (ID_Funcionario, Nome) VALUES
+(1, 'Lucas Marques'),
+(2, 'Mariana Ribeiro'),
+(3, 'Rafael Almeida'),
+(4, 'Juliana Campos'),
+(5, 'Paulo Soares'),
+(6, 'Renata Martins'),
+(7, 'Thiago Fernandes'),
+(8, 'Patricia Lima'),
+(9, 'Eduardo Ramos'),
+(10, 'Sofia Gonçalves'),
+(11, 'Felipe Araújo'),
+(12, 'Isabelly Costa'),
+(13, 'Mateus Carvalho'),
+(14, 'Giovanna Rodrigues'),
+(15, 'Gustavo Barbosa');
+
+INSERT INTO Materia (ID_Materia, Nome, Horas) VALUES
+(1, 'Matemática', 60),
+(2, 'Português', 60),
+(3, 'História', 50),
+(4, 'Geografia', 50),
+(5, 'Biologia', 55),
+(6, 'Química', 55),
+(7, 'Física', 55),
+(8, 'Inglês', 40),
+(9, 'Espanhol', 40),
+(10, 'Artes', 30),
+(11, 'Educação Física', 30),
+(12, 'Filosofia', 45),
+(13, 'Sociologia', 45),
+(14, 'Informática', 60),
+(15, 'Economia', 50);
+
+INSERT INTO Curso (ID_Curso, Nome, Periodo) VALUES
+(1, 'Engenharia Civil', 10),
+(2, 'Medicina', 12),
+(3, 'Direito', 10),
+(4, 'Administração', 8),
+(5, 'Ciência da Computação', 8),
+(6, 'Psicologia', 10),
+(7, 'Arquitetura', 10),
+(8, 'Engenharia Mecânica', 10),
+(9, 'Enfermagem', 10),
+(10, 'Educação Física', 8),
+(11, 'Contabilidade', 8),
+(12, 'Marketing', 8),
+(13, 'Odontologia', 10),
+(14, 'Engenharia de Produção', 10),
+(15, 'Farmácia', 10);
+
+INSERT INTO Matricula_Aluno_Professor_Curso (fk_Aluno_ID, fk_Professor_ID, fk_Curso_ID) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 1),
+(5, 5, 2),
+(6, 6, 2),
+(7, 7, 2),
+(8, 8, 2),
+(9, 9, 3),
+(10, 10, 3),
+(11, 11, 3),
+(12, 12, 3),
+(13, 13, 4),
+(14, 14, 4),
+(15, 15, 4);
+
+INSERT INTO Tem (fk_Curso_ID, fk_Materia_ID) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 11),
+(11, 15), 
+(12, 14), 
+(13, 12), 
+(14, 13), 
+(15, 10);
+
+
+
+SELECT c.Nome AS Curso, 
+       CAST(AVG(AlunoCount) AS DECIMAL(10,2)) AS Média_Alunos
+FROM Curso c
+LEFT JOIN (
+    SELECT fk_Curso_ID, COUNT(DISTINCT fk_Aluno_ID) AS AlunoCount
+    FROM Matricula_Aluno_Professor_Curso
+    GROUP BY fk_Curso_ID
+) AS CursoAlunos ON CursoAlunos.fk_Curso_ID = c.ID_Curso
+GROUP BY c.Nome;
+
+SELECT p.Nome AS Professor, SUM(m.Horas) AS Total_Horas_Lecionadas
+FROM Professor p
+JOIN Matricula_Aluno_Professor_Curso mapc ON p.ID_Professor = mapc.fk_Professor_ID
+JOIN Tem t ON mapc.fk_Curso_ID = t.fk_Curso_ID
+JOIN Materia m ON t.fk_Materia_ID = m.ID_Materia
+GROUP BY p.Nome;
+
+SELECT c.Nome AS Curso, p.Nome AS Professor
+FROM Curso c
+JOIN Matricula_Aluno_Professor_Curso mapc ON c.ID_Curso = mapc.fk_Curso_ID
+JOIN Professor p ON mapc.fk_Professor_ID = p.ID_Professor
+GROUP BY c.Nome, p.Nome;
+
+SELECT c.Nome AS Curso, c.Periodo, COUNT(t.fk_Materia_ID) AS Quantidade_Materias
+FROM Curso c
+JOIN Tem t ON c.ID_Curso = t.fk_Curso_ID
+JOIN Materia m ON t.fk_Materia_ID = m.ID_Materia
+GROUP BY c.Nome, c.Periodo;
+
+SELECT c.Nome AS Curso, a.Nome AS Aluno
+FROM Curso c
+JOIN Matricula_Aluno_Professor_Curso mapc ON c.ID_Curso = mapc.fk_Curso_ID
+JOIN Aluno a ON mapc.fk_Aluno_ID = a.ID_Aluno
+GROUP BY c.Nome, a.Nome;
+
+SELECT c.Nome AS Curso, m.Nome AS Materia
+FROM Curso c
+JOIN Tem t ON c.ID_Curso = t.fk_Curso_ID
+JOIN Materia m ON t.fk_Materia_ID = m.ID_Materia;
+
+
+DROP PROCEDURE InserirMatricula;
+DELIMITER //
+
+CREATE PROCEDURE InserirMatricula(
+    IN aluno_id INT,
+    IN professor_id INT,
+    IN curso_id INT
+)
+BEGIN
+    DECLARE alunoExiste, professorExiste, cursoExiste, jaMatriculado INT;
+
+    SELECT COUNT(*) INTO alunoExiste FROM Aluno WHERE ID_Aluno = aluno_id;
+    SELECT COUNT(*) INTO professorExiste FROM Professor WHERE ID_Professor = professor_id;
+    SELECT COUNT(*) INTO cursoExiste FROM Curso WHERE ID_Curso = curso_id;
+    SELECT COUNT(*) INTO jaMatriculado FROM Matricula_Aluno_Professor_Curso WHERE fk_Aluno_ID = aluno_id AND fk_Professor_ID = professor_id AND fk_Curso_ID = curso_id;
+
+    IF alunoExiste > 0 AND professorExiste > 0 AND cursoExiste > 0 AND jaMatriculado = 0 THEN
+        INSERT INTO Matricula_Aluno_Professor_Curso (fk_Aluno_ID, fk_Professor_ID, fk_Curso_ID)
+        VALUES (aluno_id, professor_id, curso_id);
+        SET MESSAGE_TEXT = 'Aluno matriculado com sucesso.';
+    ELSEIF jaMatriculado > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Erro: Matrícula já existente.';
+    ELSE
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Erro: Aluno, professor ou curso não encontrado.';
+    END IF;
+END //
+
+DELIMITER ;
+
+
+CALL InserirMatricula(2, 1, 1);
+CALL InserirMatricula(1, 16, 1);
+CALL InserirMatricula(5, 6, 2);
+
+
+DELIMITER //
+
+CREATE TRIGGER IncrementarContadorMatricula
+AFTER INSERT ON Matricula_Aluno_Professor_Curso
+FOR EACH ROW
+BEGIN
+    UPDATE Curso SET Periodo = Periodo + 1 WHERE ID_Curso = NEW.fk_Curso_ID;
+END;
+
+//
+DELIMITER ;
+
+INSERT INTO Matricula_Aluno_Professor_Curso (fk_Aluno_ID, fk_Professor_ID, fk_Curso_ID) VALUES (2, 2, 3);
+
+
