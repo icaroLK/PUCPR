@@ -1,0 +1,135 @@
+CREATE DATABASE Universe;
+USE universe;
+
+
+
+CREATE TABLE Materias (
+ID INT PRIMARY KEY AUTO_INCREMENT,
+Materia varchar(100),
+Carga int
+);
+
+INSERT INTO Materias(Materia, carga) VALUES
+("Banco de dados", 80),
+("Conectividade em Sistemas Ciberfísicos", 80),
+("Interação Humano Computador", 80),
+("Programação WEB", 80),
+("Lógica Matemática", 80),
+("Engenharia de Requisitos", 120),
+("Filosofia", 80),
+("Segurança da Informação", 80),
+("Performance em Sistemas Ciberfísicos", 80),
+("Programação Orientada a Objetos", 120),
+("Criação de Modelos de Soluções Computacionais", 80),
+("Experiência Criativa: Projetando Soluções Computacionais", 120)
+;
+
+
+
+CREATE TABLE usuarios(
+id INT PRIMARY KEY auto_increment NOT NULL,
+usuario varchar(20) NOT NULL,
+nome varchar(20) NOT NULL,
+email varchar(50) NOT NULL,
+senha varchar(60) NOT NULL,
+tipo varchar(10) NOT NULL default 'aluno'
+);
+
+
+
+INSERT INTO usuarios(usuario, nome, email, senha, tipo) VALUES
+('icaro.kuchanovicz', 'Icaro', 'icaro.kuchanovicz@pucpr.edu.br', 'icaro1234', 'aluno'),
+('carol.assis', 'Caroline', 'caroline.assis@pucpr.edu.br', '22032005', 'aluno'),
+('ary.farah', 'Ary', 'ary.farah@pucpr.edu.br', 'ary1234', 'aluno'),
+('adriano.vale', 'Adriano', 'adriano.vale@pucpr.edu.br', 'souburro', 'aluno'),
+('sheila.prof', 'Sheila', 'sheila.reinehr@pucpr.edu.br', 'linda123', 'professor'),
+('maicris.prof', 'Maicris', 'maicris.prof@pucpr.edu.br', 'mario123', 'professor');
+
+
+CREATE TABLE materia_usuario(
+id INT PRIMARY KEY auto_increment NOT NULL,
+id_usuario INT NOT NULL,
+id_materia INT NOT NULL,
+
+frequencia FLOAT not null default '100',
+nota FLOAT NOT NULL DEFAULT '0',
+
+foreign key (id_usuario) REFERENCES usuarios (id),
+foreign key (id_materia) REFERENCES materias (id)
+);
+
+insert into materia_usuario (id_usuario, id_materia, frequencia, nota) VALUES
+(1, 1, 100, 10),
+(1, 2, 97.5, 9.8),
+(1, 3, 100, 9),
+(1, 4, 95, 9.2),
+(1, 5, 97.5, 9.6),
+(1, 6, 100, 10);
+
+
+insert into materia_usuario (id_usuario, id_materia, frequencia, nota) VALUES
+(2, 1, 90, 8),
+(2, 2, 92, 9.4),
+(2, 3, 85, 7.8),
+(2, 4, 90, 10),
+(2, 5, 95, 8.9),
+(2, 6, 80, 9.5);
+
+
+insert into materia_usuario (id_usuario, id_materia, frequencia, nota) VALUES
+(3, 1, 94, 9.3),
+(3, 2, 92, 10),
+(3, 3, 90, 8.4),
+(3, 4, 86, 9.1),
+(3, 5, 88, 10),
+(3, 6,90,8.8);
+
+insert into materia_usuario (id_usuario, id_materia, frequencia, nota) VALUES
+(4, 1, 90, 5.4),
+(4, 2, 86, 6.8),
+(4, 3, 82, 6.3),
+(4, 4, 84, 8.6),
+(4, 5, 92, 10),
+(4,6,78,7.9);
+
+
+SELECT mu.id, u.nome, m.materia, mu.frequencia, mu.nota, m.carga FROM materia_usuario AS mu 
+INNER JOIN usuarios AS u ON (mu.id_usuario = u.id)
+INNER JOIN materias AS m ON (mu.id_materia = m.id);
+
+SELECT * FROM materia_usuario AS mu 
+INNER JOIN usuarios AS u ON (mu.id_usuario = u.id)
+INNER JOIN materias AS m ON (mu.id_materia = m.id)
+WHERE u.nome LIKE 'Icaro';
+
+
+CREATE TABLE atividade(
+id INT unique,
+nome varchar(50) not null,
+grupo varchar(50) not null default 'PUCPR',
+tipo varchar(30) not null,
+horas int not null,
+posicao varchar(30) not null default 'Em Análise',
+fk_id_usuario INT,
+
+FOREIGN KEY (fk_id_usuario) REFERENCES usuarios (id)
+);
+
+DELIMITER //
+CREATE TRIGGER atrib
+BEFORE INSERT ON atividade
+FOR EACH ROW
+BEGIN
+  DECLARE new_id INT;
+  SET new_id = FLOOR(1000 + RAND() * 100000);
+  
+  WHILE (EXISTS(SELECT 1 FROM atividade WHERE id = new_id)) DO
+    SET new_id = FLOOR(1000 + RAND() * 100000);
+  END WHILE;
+  
+  SET NEW.id = new_id;
+END;
+//
+DELIMITER ;
+
+
